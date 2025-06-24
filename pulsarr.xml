@@ -27,7 +27,7 @@
 
     <!-- Environment variables -->
     <Config Name="Application Port" Target="port" Default="3003" Mode="" Description="Internal application port (should match WebUI port)" Type="Variable" Display="always" Required="true" Mask="false">3003</Config>
-    <Config Name="Base URL" Target="baseUrl" Default="http://your-server-ip" Mode="" Description="Important: Your base URL is what clients like Sonarr and Radarr should use in order to access Pulsarr (without the port)" Type="Variable" Display="always" Required="false" Mask="false">http://your-server-ip</Config>
+    <Config Name="Base URL" Target="baseUrl" Default="" Mode="" Description="Your base URL for clients like Sonarr and Radarr to access Pulsarr (without port)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="Log Level" Target="logLevel" Default="info" Mode="" Description="Logging Level. Possible values: [silent, info]" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
     <Config Name="NODE_ARGS" Target="NODE_ARGS" Default="--log-both" Mode="" Description="Additional NODE_ARGS" Type="Variable" Display="always" Required="false" Mask="false">--log-both</Config>
     <Config Name="Timezone" Target="TZ" Default="America/Los_Angeles" Mode="" Description="Timezone in TZ format (see wikipedia to find the correct timezone https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)" Type="Variable" Display="always" Required="false" Mask="false">America/Los_Angeles</Config>
