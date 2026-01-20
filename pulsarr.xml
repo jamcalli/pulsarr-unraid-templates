@@ -17,16 +17,25 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1743168512</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>Plex, Sonarr, and Radarr</Requires>
+  <!-- Essential -->
   <Config Name="WebUI Port" Target="3003" Default="3003" Mode="tcp" Description="Port to access the web UI" Type="Port" Display="always" Required="true" Mask="false">3003</Config>
-  <Config Name="Base URL" Target="baseUrl" Default="http://your-server-ip" Mode="" Description="CRITICAL: Address where Sonarr/Radarr can reach Pulsarr for webhooks. Examples: http://pulsarr (Docker Compose), http://localhost (host networking), http://host.docker.internal (Docker Desktop), http://server-ip (separate machines)" Type="Variable" Display="always" Required="true" Mask="false">http://your-server-ip</Config>
   <Config Name="Port" Target="port" Default="3003" Mode="" Description="Internal application port (should match WebUI port)" Type="Variable" Display="always" Required="true" Mask="false">3003</Config>
-  <Config Name="Log Level" Target="logLevel" Default="info" Mode="" Description="Logging level: fatal, error, warn, info, debug, trace, silent" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
-  <Config Name="Enable Console Output" Target="enableConsoleOutput" Default="true" Mode="" Description="Enable console logging output (set to 'false' to disable terminal output)" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
-  <Config Name="Enable Request Logging" Target="enableRequestLogging" Default="false" Mode="" Description="Enable HTTP request logging with method, URL, response codes, and timing (sensitive parameters are redacted)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
-  <Config Name="Timezone" Target="TZ" Default="America/Los_Angeles" Mode="" Description="Timezone in TZ format (see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)" Type="Variable" Display="always" Required="false" Mask="false">America/Los_Angeles</Config>
+  <Config Name="Base URL" Target="baseUrl" Default="http://your-server-ip:3003" Mode="" Description="Address where Sonarr/Radarr can reach Pulsarr for webhooks. Use your server IP or hostname." Type="Variable" Display="always" Required="true" Mask="false">http://your-server-ip:3003</Config>
   <Config Name="App Data Path" Target="/app/data" Default="/mnt/user/appdata/pulsarr" Mode="rw" Description="Path for configuration files, database, and logs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/pulsarr</Config>
+  <Config Name="Timezone" Target="TZ" Default="America/Los_Angeles" Mode="" Description="Timezone in TZ format (e.g., America/New_York, Europe/London)" Type="Variable" Display="always" Required="false" Mask="false">America/Los_Angeles</Config>
+  <!-- Reverse Proxy / HTTPS -->
+  <Config Name="Secure Cookies" Target="cookieSecured" Default="false" Mode="" Description="Set to true if accessing Pulsarr through HTTPS (reverse proxy)" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="Base Path" Target="basePath" Default="/" Mode="" Description="URL subpath when behind a reverse proxy (e.g., /pulsarr)" Type="Variable" Display="advanced" Required="false" Mask="false">/</Config>
+  <Config Name="Authentication Method" Target="authenticationMethod" Default="required" Mode="" Description="Authentication mode: required, requiredExceptLocal, or disabled" Type="Variable" Display="advanced" Required="false" Mask="false">required</Config>
+  <Config Name="Allow Iframes" Target="allowIframes" Default="false" Mode="" Description="Allow embedding in Organizr, Homarr, Homepage, etc." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <!-- PostgreSQL (optional - defaults to SQLite) -->
+  <Config Name="Database Type" Target="dbType" Default="sqlite" Mode="" Description="Database type: sqlite or postgres" Type="Variable" Display="advanced" Required="false" Mask="false">sqlite</Config>
+  <Config Name="PostgreSQL Host" Target="dbHost" Default="localhost" Mode="" Description="PostgreSQL server hostname (only if dbType=postgres)" Type="Variable" Display="advanced" Required="false" Mask="false">localhost</Config>
+  <Config Name="PostgreSQL Port" Target="dbPort" Default="5432" Mode="" Description="PostgreSQL server port (only if dbType=postgres)" Type="Variable" Display="advanced" Required="false" Mask="false">5432</Config>
+  <Config Name="PostgreSQL Database" Target="dbName" Default="pulsarr" Mode="" Description="PostgreSQL database name (only if dbType=postgres)" Type="Variable" Display="advanced" Required="false" Mask="false">pulsarr</Config>
+  <Config Name="PostgreSQL User" Target="dbUser" Default="postgres" Mode="" Description="PostgreSQL username (only if dbType=postgres)" Type="Variable" Display="advanced" Required="false" Mask="false">postgres</Config>
+  <Config Name="PostgreSQL Password" Target="dbPassword" Default="" Mode="" Description="PostgreSQL password (only if dbType=postgres)" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
 </Container>
