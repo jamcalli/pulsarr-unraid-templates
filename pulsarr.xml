@@ -29,6 +29,8 @@
   <Config Name="Base Path" Target="basePath" Default="/" Mode="" Description="URL subpath when behind a reverse proxy (e.g., /pulsarr)" Type="Variable" Display="advanced" Required="false" Mask="false">/</Config>
   <Config Name="Authentication Method" Target="authenticationMethod" Default="required" Mode="" Description="Authentication mode: required, requiredExceptLocal, or disabled" Type="Variable" Display="advanced" Required="false" Mask="false">required</Config>
   <Config Name="Allow Iframes" Target="allowIframes" Default="false" Mode="" Description="Allow embedding in Organizr, Homarr, Homepage, etc." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <!-- Apprise (optional) -->
+  <Config Name="Apprise API URL" Target="appriseUrl" Default="" Mode="" Description="Apprise API server URL (e.g., http://apprise:8000). Enables Apprise notifications when set." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
   <!-- Debugging -->
   <Config Name="Enable Request Logging" Target="enableRequestLogging" Default="false" Mode="" Description="Log all HTTP requests - useful for debugging reverse proxy issues" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
   <!-- PostgreSQL (optional - defaults to SQLite) -->
