@@ -20,6 +20,9 @@
   <DonateText/>
   <DonateLink/>
   <Requires>Plex, Sonarr, and Radarr</Requires>
+  <!-- User / Group Identifiers -->
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID the container runs as" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID the container runs as" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
   <!-- Essential -->
   <Config Name="WebUI Port" Target="3003" Default="3003" Mode="tcp" Description="Port to access the web UI" Type="Port" Display="always" Required="true" Mask="false">3003</Config>
   <Config Name="App Data Path" Target="/app/data" Default="/mnt/user/appdata/pulsarr" Mode="rw" Description="Path for configuration files, database, and logs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/pulsarr</Config>
